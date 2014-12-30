@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.williamghelfi.apps.aliga" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <preference name="loglevel" value="DEBUG" />
+    <name>Aliga</name>
+    <description>
+        Il calendario della raccolta differenziata, nel tuo smartphone.
+    </description>
+    <author email="william@williamghelfi.com" href="http://www.williamghelfi.com/">
+        William Ghelfi
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <preference name="SplashScreen" value="screen" />
+    <preference name="SplashScreenDelay" value="3000" />
+</widget>

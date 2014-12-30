@@ -1,0 +1,53 @@
+<ion-view title="Calendario">
+
+  <ion-nav-buttons side="left" ng-if="info">
+    <button class="button" ui-sref="years({slug: info.slug, year: info.year})">
+      <i class="ion-ios7-arrow-back"></i>&nbsp;
+        Calendari
+    </button>
+  </ion-nav-buttons>
+
+  <ion-content class="has-header">
+
+<!-- TEMPORARILY HIDDEN
+  <div class="panel-body">
+    <ul class="nav nav-pills nav-justified margin-base-vertical">
+      <li>
+        <a href="" ng-click="scrollTo('today')">Oggi</a>
+      </li>
+      <li>
+        <a href="" ng-click="scrollTo('month-1')">Gennaio-Giugno</a>
+      </li>
+      <li>
+        <a href="" ng-click="scrollTo('month-7')">Luglio-Dicembre</a>
+      </li>
+    </ul>
+    <div class="input-group col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-4">
+      <span class="input-group-addon">
+        <span class="glyphicon glyphicon-filter"></span>
+      </span>
+      <input type="text" class="form-control" ng-model="search" placeholder="umido..." />
+    </div>
+  </div>
+-->
+
+  <div ng-repeat="m in info.schedule" class="list">
+    <div class="item item-divider" id="month-{{m.month}}">{{m.month | integer2date | date: 'MMMM' | uppercase }}&#32;{{info.year}}</div>
+
+      <div class="item" id="{{d.dayId}}" ng-repeat-start="d in m.days">
+        <h2 ng-class="{'assertive': (d.date|date:'EEEE') == 'domenica'}">
+          <time datetime="{{d.date}}" ng-class="{'text-danger': (d.date|date:'EEEE') == 'domenica'}">{{d.date | date: 'dd'}}</time>&#32;
+          {{d.date | date: 'EEEE' | capitalize}}
+        </h2>
+      </div>
+
+      <ion-item ng-repeat-end ng-repeat="z in d.zones">
+        <span ng-repeat="wasteType in z.types | filter:search:strict" class="breakingbad breakingbad-{{wasteType | nospace}} margin-tiny-right">{{wasteType|breakingbad}}</span>
+        <span class="item-note">{{z.name}}</span>
+      </ion-item>
+
+    </div>
+  </div>
+
+  </ion-content>
+</ion-view>

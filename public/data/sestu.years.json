@@ -1,0 +1,10 @@
+{
+  "city": "Sestu",
+  "calendars": [
+    {
+      "year": 2014,
+      "validfrom": "2014-07-01",
+      "validto": "2014-12-31"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.williamghelfi.apps.aliga" version="1.2.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Aliga</name>
+    <description>
+        Cosa porto fuori, oggi? Il calendario della raccolta differenziata, sempre in tasca.
+    </description>
+    <author email="william@williamghelfi.com" href="http://www.williamghelfi.com/">
+        William Ghelfi
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+
+    <preference name="SplashScreen" value="screen" />
+    <preference name="SplashScreenDelay" value="60000" />
+    <preference name="AutoHideSplashScreen" value="false" />
+
+    <feature name="SplashScreen">
+        <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
+    </feature>
+</widget>

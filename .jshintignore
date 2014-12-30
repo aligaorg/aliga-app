@@ -1,0 +1,5 @@
+public/scripts/*.annotated.js
+public/scripts/*.concat.js
+public/scripts/_bower.js
+public/scripts/angular-locale_it-it.js
+public/scripts/*.min.js

@@ -1,0 +1,10 @@
+{
+  "city": "Assemini",
+  "calendars": [
+    {
+      "year": 2014,
+      "validfrom": "2014-05-01",
+      "validto": "2014-12-31"
+    }
+  ]
+}

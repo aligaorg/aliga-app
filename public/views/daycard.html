@@ -1,0 +1,52 @@
+<ion-view title="{{ info.city || 'Scegli la città' }}">
+
+  <ion-nav-buttons side="left" ng-if="info.canHaveNotification">
+    <button class="button button-icon icon ion-ios7-clock-outline" ng-click="openModal()"></button>
+  </ion-nav-buttons>
+
+  <ion-nav-buttons side="right">
+    <button menu-toggle="right" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+
+  <ion-content class="has-header">
+
+    <ion-slide-box does-continue="true" auto-play="false" active-slide="info.activeSlide" ng-if="info.week">
+      <ion-slide ng-repeat="day in info.week">
+        <div class="list card">
+          <div class="item">
+            <h2 class="title">
+              <i class="icon ion-ios7-calendar-outline"></i>
+              <time datetime="{{day.date}}" ng-class="{'assertive': (day.date|date:'EEEE') == 'domenica'}">{{day.date | date: 'fullDate' | capitalize}}</time>
+            </h2>
+          </div>
+          <ion-item ng-repeat-end ng-repeat="z in day.zones">
+            <span ng-repeat="wasteType in z.types | filter:search:strict" class="breakingbad breakingbad-{{wasteType | nospace}} margin-tiny-right">{{wasteType|breakingbad}}</span>
+            <span class="item-note">{{z.name}}</span>
+          </ion-item>
+        </div>
+      </ion-slide>
+    </ion-slide-box>
+
+    <div class="card" ng-if="info.week">
+      <div class="item item-icon-left item-text-wrap">
+        <p>
+          <i class="icon ion-ios7-information-outline"></i>
+          Scorri a destra o a sinistra per controllare da oggi a tra 7 giorni.
+        </p>
+        <p>Se stai utilizzando Android 4 o più recente, usa il pulsante <i class="ion-ios7-clock-outline"></i> per impostare le notifiche.</p>
+      </div>
+    </div>
+
+    <div class="list card" ng-if="!info.week">
+      <p class="item item-icon-left item-text-wrap">
+        <i class="icon ion-happy"></i>
+        Hey, ciao!
+      </p>
+      <p class="item item-body">
+        Per cominciare, scegli una città.<br />
+        Usa il pulsante <i class="ion-navicon-round"></i> in alto a destra.
+      </p>
+    </div>
+
+  </ion-content>
+</ion-view>

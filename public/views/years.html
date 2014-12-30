@@ -1,0 +1,22 @@
+<ion-view title="Scegli un calendario">
+
+  <ion-nav-buttons side="left">
+    <button class="button" ui-sref="main">
+      <i class="ion-ios7-arrow-back"></i>&nbsp;
+      Inizio
+    </button>
+  </ion-nav-buttons>
+
+  <ion-content class="has-header">
+
+    <ion-list>
+      <ion-item
+        ng-repeat="cal in info.calendars"
+        ui-sref="calendar({slug: info.slug, year: cal.year})">
+          <time datetime="{{cal.year}}" class="label label-info">{{cal.year}}</time>
+          <span class="item-note">{{cal.validfrom|date:'dd MMM yyyy'|capitalize}} • {{cal.validto|date:'dd MMM yyyy'|capitalize}}</span>
+      </ion-item>
+    </ion-list>
+
+  </ion-content>
+</ion-view>

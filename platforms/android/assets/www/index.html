@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="it" ng-strict-di>
+<head>
+  <!--
+  METTERE ng-app per dev
+  TOGLIERE ng-app per release
+  -->
+  <title>Aliga</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width" />
+  <link rel="stylesheet" href="ionic/css/ionic.min.css" />
+  <link rel="stylesheet" href="css/aliga.min.css" />
+
+  <script src="cordova.js"></script>
+  <script src="cordova_plugins.js"></script>
+
+  <script src="js/es5-shim.min.js"></script>
+
+  <script src="ionic/js/ionic.bundle.min.js"></script>
+  <script src="ionic/js/angular/angular-resource.min.js"></script>
+  <script src="js/pouchdb.min.js"></script>
+  <script src="js/angular-pouchdb.js"></script>
+
+  <script src="js/aliga.min.js"></script>
+
+  <script>
+  var ua = navigator.userAgent;
+   if( ua.indexOf("Android") >= 0 )
+   {
+     var androidversion = parseFloat(ua.slice(ua.indexOf("Android")+8));
+     if (androidversion <= 2.3)
+     {
+       var newScript = document.createElement("style");
+       var content = document.createTextNode("* { transition: none!important; -webkit-transition: none!important; }");
+       newScript.appendChild(content);
+       var bodyClass = document.getElementsByTagName("head")[0];
+       bodyClass.insertBefore(newScript, bodyClass.childNodes[2]);
+     }
+   }
+  </script>
+
+</head>
+<body class="platform-android platform-cordova platform-webview">
+
+<ion-nav-view></ion-nav-view>
+
+<!-- <footer class="bar bar-footer bar-stable">
+  <address class="title">Aliga v1.1.0</address>
+</footer>
+ -->
+
+</body>
+</html>

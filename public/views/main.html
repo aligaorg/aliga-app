@@ -1,0 +1,23 @@
+<ion-view title="Scegli una città">
+
+  <ion-content class="has-header">
+
+    <div class="list">
+      <a class="item item-icon-right" ui-sref="dayCard({slug: c.slug, year: info.year, date: info.tomorrow})" ng-repeat="c in info.cities">
+        {{c.city}}
+        <i class="icon ion-ios7-calendar-outline"></i>
+      </a>
+      <a class="item" href="#" ng-click="addNotification()">Notifica</a>
+    </div>
+
+    <div class="card">
+      <div class="item item-icon-left item-text-wrap">
+        <i class="icon ion-ios7-information-outline"></i>
+        <p>Tocca <i class="ion-ios7-calendar-outline"></i> per sapere cosa portar fuori oggi.</p>
+
+      </div>
+    </div>
+
+  </ion-content>
+
+</ion-view>

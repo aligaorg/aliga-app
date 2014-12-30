@@ -1,0 +1,12 @@
+my-android-release-key.keystore
+public/build
+www/lib/**
+.tmp
+.sass-cache
+bower_components
+node_modules
+.bower-cache
+.bower-registry
+.DS_Store
+platforms/android/ant-build/
+public/test/coverage

@@ -1,0 +1,27 @@
+[
+  {
+    "city": "Abbasanta",
+    "province": "OR",
+    "slug": "abbasanta"
+  },
+  {
+    "city": "Assemini",
+    "province": "CA",
+    "slug": "assemini"
+  },
+  {
+    "city": "San Sperate",
+    "province": "CA",
+    "slug": "san-sperate"
+  },
+  {
+    "city": "Selargius",
+    "province": "CA",
+    "slug": "selargius"
+  },
+  {
+    "city": "Sestu",
+    "province": "CA",
+    "slug": "sestu"
+  }
+]
